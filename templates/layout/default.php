@@ -27,28 +27,36 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake']) ?>
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake', 'emr']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+    <header class="emr-header">
+        <div class="emr-header-title">
+            <a href="<?= $this->Url->build('/') ?>">宮野クリニック 電子カルテ</a>
         </div>
-        <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+        <div class="emr-header-user">
+            ログインユーザー：未ログイン
         </div>
-    </nav>
-    <main class="main">
-        <div class="container">
+    </header>
+    <div class="emr-layout">
+        <aside class="emr-sidebar">
+            <nav class="emr-menu">
+                <a href="<?= $this->Url->build('/') ?>">ホーム</a>
+                <a href="#">患者管理</a>
+                <a href="#">受付管理</a>
+                <a href="#">診察</a>
+                <a href="#">予約管理</a>
+            </nav>
+        </aside>
+        <main class="emr-main">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
-        </div>
-    </main>
+        </main>
+    </div>
     <footer>
     </footer>
 </body>

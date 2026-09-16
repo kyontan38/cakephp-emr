@@ -1,0 +1,261 @@
+/* =========================
+   電子カルテ 共通スタイル
+========================= */
+
+/* ヘッダー */
+.emr-header {
+    height: 60px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1976a8;
+    color: #ffffff;
+}
+
+/* システム名 */
+.emr-header-title a {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ログインユーザー */
+.emr-header-user {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* =========================
+   サイドバー・メインレイアウト
+========================= */
+
+/* サイドバーとメイン画面を横並びにする */
+.emr-layout {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+/* サイドバー */
+.emr-sidebar {
+    width: 220px;
+    background-color: #263238;
+    flex-shrink: 0;
+}
+
+/* メニュー */
+.emr-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+/* メニュー項目 */
+.emr-menu a {
+    display: block;
+    padding: 14px 20px;
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+}
+
+/* マウスを乗せたとき */
+.emr-menu a:hover {
+    background-color: #37474f;
+    border-left-color: #29b6f6;
+}
+
+/* メインコンテンツ */
+.emr-main {
+    flex: 1;
+    padding: 24px;
+    background-color: #f4f7f9;
+}
+
+/* =========================
+   ダッシュボード
+========================= */
+
+.emr-home {
+    width: 100%;
+}
+
+/* ダッシュボード上部 */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #263238;
+}
+
+.dashboard-header p {
+    margin: 6px 0 0;
+    color: #607d8b;
+}
+
+.dashboard-date {
+    font-size: 15px;
+    color: #607d8b;
+}
+
+/* 状況カード全体 */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+}
+
+/* 各カード */
+.dashboard-card {
+    flex: 1;
+    padding: 22px;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+}
+
+/* カードタイトル */
+.dashboard-card-title {
+    margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #546e7a;
+}
+
+/* 人数 */
+.dashboard-card-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1976a8;
+}
+
+.dashboard-card-number span {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #607d8b;
+}
+
+/* =========================
+   クイックメニュー
+========================= */
+
+.quick-menu {
+    margin-top: 32px;
+}
+
+.quick-menu h2 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #263238;
+}
+
+.quick-menu-items {
+    display: flex;
+    gap: 16px;
+}
+
+.quick-menu-item {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.quick-menu-item:hover {
+    border-color: #1976a8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.quick-menu-title {
+    margin-bottom: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #1976a8;
+}
+
+.quick-menu-description {
+    font-size: 14px;
+    color: #607d8b;
+}
+
+/* =========================
+   本日の受付状況
+========================= */
+
+.today-reception {
+    margin-top: 32px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #263238;
+}
+
+.section-link {
+    font-size: 14px;
+    color: #1976a8;
+    text-decoration: none;
+}
+
+.section-link:hover {
+    text-decoration: underline;
+}
+
+/* テーブルを囲む部分 */
+.reception-table-wrapper {
+    overflow-x: auto;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+}
+
+/* 受付テーブル */
+.reception-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.reception-table th {
+    padding: 14px 16px;
+    background-color: #eef3f5;
+    color: #455a64;
+    font-size: 14px;
+    text-align: left;
+}
+
+.reception-table td {
+    padding: 16px;
+    border-top: 1px solid #e5eaed;
+    font-size: 14px;
+}
+
+/* データがない場合 */
+.reception-table .empty-message {
+    padding: 32px;
+    color: #78909c;
+    text-align: center;
+}
+
