@@ -29,6 +29,12 @@ use Cake\Http\MiddlewareQueue;
 use Cake\ORM\Locator\TableLocator;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Authentication\AuthenticationService;
+use Authentication\AuthenticationServiceProviderInterface;
+use Authentication\AuthenticationServiceInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Authentication\Middleware\AuthenticationMiddleware;
+use Override;
 
 /**
  * Application setup class.
@@ -38,7 +44,7 @@ use Cake\Routing\Middleware\RoutingMiddleware;
  *
  * @extends \Cake\Http\BaseApplication<\App\Application>
  */
-class Application extends BaseApplication
+class Application extends BaseApplication implements AuthenticationServiceProviderInterface
 {
     /**
      * Load all the application configuration and bootstrap logic.
@@ -91,6 +97,9 @@ class Application extends BaseApplication
             // https://book.cakephp.org/5/en/controllers/middleware.html#body-parser-middleware
             ->add(new BodyParserMiddleware())
 
+            // ログイン状態を判定するAuthenticationミドルウェア
+            ->add(new AuthenticationMiddleware($this))
+
             // Cross Site Request Forgery (CSRF) Protection Middleware
             // https://book.cakephp.org/5/en/security/csrf.html#cross-site-request-forgery-csrf-middleware
             ->add(new CsrfProtectionMiddleware([
@@ -98,6 +107,49 @@ class Application extends BaseApplication
             ]));
 
         return $middlewareQueue;
+    }
+
+    /**
+     * Authenticationサービスの設定
+     * 
+     * usersテーブルのusernameとpasswordを利用してユーザー認証を行う
+     * 
+     * @param \Psr\Http\Message\ServerRequestInterface $request リクエスト情報
+     * @return \Authentication\AuthenticationServiceInterface
+     */
+    #[Override]
+    public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
+    {
+        // 未ログイン状態で認証が必要になった場合はログイン画面へ移動する
+        $service = new AuthenticationService([
+            'unauthenticatedRedirect' => '/login',
+            'queryParam' => 'redirect',
+        ]);
+
+        // ログイン時に使用するフィールドを指定
+        $fields = [
+            'username' => 'username',
+            'password' => 'password',
+        ];
+
+        // ログイン済みの場合はセッション情報を利用する
+        $service->loadAuthenticator('Authentication.Session');
+
+        // /login にPOSTされたフォーム情報を使って認証する
+        $service->loadAuthenticator('Authentication.Form', [
+            'identifier' => [
+                'className' => 'Authentication.Password',
+                'fields' => $fields,
+                'resolver' => [
+                    'className' => 'Authentication.Orm',
+                    'userModel' => 'Users'
+                ],
+            ],
+            'fields' => $fields,
+            'loginUrl' => '/login',
+        ]);
+
+        return $service;
     }
 
     /**

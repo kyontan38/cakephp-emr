@@ -1,0 +1,122 @@
+/* =========================
+   電子カルテ ログイン画面
+========================= */
+
+/* 画面全体 */
+body {
+    margin: 0;
+    background: #eef3f7;
+    font-family: "Yu Gothic", "Meiryo", sans-serif;
+}
+
+/* ログイン画面全体の配置 */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-40px);
+}
+
+/* ログインパネル本体 */
+.login-panel {
+    width: 420px;
+    background: #ffffff;
+    border: 1px solid #b8c5d1;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* システム名部分 */
+.login-header {
+    padding: 22px 28px;
+    background: #e4edf5;
+    border-bottom: 1px solid #b8c5d1;
+}
+
+/* システム名 */
+.login-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #243746;
+}
+
+/* 医療機関名 */
+.login-header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: #657786;
+}
+
+/* 入力エリア */
+.login-body {
+    padding: 28px;
+}
+
+/* ログイン見出し */
+.login-body h2 {
+    margin: 0 0 24px;
+    font-size: 20px;
+    color: #243746;
+    border-left: 4px solid #5f88a8;
+    padding-left: 10px;
+}
+
+/* 各入力欄 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ラベル */
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334455;
+}
+
+/* テキスト入力欄 */
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #aebbc6;
+    border-radius: 2px;
+    font-size: 15px;
+    background: #ffffff;
+}
+
+/* 入力欄選択時 */
+.form-group input:focus {
+    outline: none;
+    border-color: #5f88a8;
+    box-shadow: 0 0 0 2px rgba(95, 136, 168, 0.15);
+}
+
+/* ログインボタン配置 */
+.login-button-area {
+    margin-top: 28px;
+    text-align: center;
+}
+
+/* ログインボタン */
+.login-button {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #466b87;
+    border-radius: 2px;
+    background: #5f88a8;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ログインボタン hover */
+.login-button:hover {
+    background: #4f7796;
+}

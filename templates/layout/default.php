@@ -34,12 +34,25 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+    <?php 
+    // Authenticationプラグインからログイン中のユーザー情報を取得
+    $identify = $this->getRequest()->getAttribute('identity');
+    ?>
     <header class="emr-header">
         <div class="emr-header-title">
             <a href="<?= $this->Url->build('/') ?>">宮野クリニック 電子カルテ</a>
         </div>
         <div class="emr-header-user">
-            ログインユーザー：未ログイン
+            <?php if ($identify): ?>
+                <span>ログインユーザー：<?= h($identify->get('name')) ?></span>
+                <?= $this->Html->link(
+                    'ログアウト',
+                    ['controller' => 'Users', 'action' => 'logout'],
+                    ['class' => 'logout-link']
+                ) ?>
+            <?php else: ?>
+                ログインユーザー：未ログイン
+            <?php endif; ?>
         </div>
     </header>
     <div class="emr-layout">

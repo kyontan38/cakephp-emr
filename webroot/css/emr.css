@@ -27,6 +27,27 @@
     color: #ffffff;
 }
 
+/* ログアウトリンク */
+.logout-link {
+    display: inline-block;
+    margin-left: 14px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* マウスを乗せたとき */
+.logout-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.24);
+    text-decoration: none;
+}
+
 /* =========================
    サイドバー・メインレイアウト
 ========================= */
