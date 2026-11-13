@@ -280,3 +280,352 @@
     text-align: center;
 }
 
+/* =========================
+   本日の受付状況
+========================= */
+.patients-index,
+.patients-view,
+.patients-add,
+.patients-edit {
+    width: 100%;
+}
+
+/* ページ上部 */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #263238;
+}
+
+/* ヘッダー右側の操作ボタン */
+.page-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================
+   患者検索
+========================= */
+.patient-search {
+    margin-bottom: 20px;
+    padding: 16px 18px;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+}
+
+.search-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.search-row .input {
+    margin-bottom: 0;
+}
+
+.search-row label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #546e7a;
+}
+
+.search-row input {
+    width: 190px;
+    height: 38px;
+    padding: 6px 10px;
+    border: 1px solid #cfd8dc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* =========================
+   患者一覧
+========================= */
+.patients-table {
+    overflow-x: auto;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+}
+
+.patients-table table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.patients-table th {
+    padding: 13px 16px;
+    background-color: #eef3f5;
+    color: #455a64;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.patients-table td {
+    padding: 14px 16px;
+    border-top: 1px solid #e5eaed;
+    color: #37474f;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.patients-table tbody tr:hover {
+    background-color: #f7fafb;
+}
+
+/* 患者名リンク */
+.patients-table td a {
+    color: #1976a8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.patients-table td a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   共通ボタン
+========================= */
+.button {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #1976a8;
+    border-radius: 4px;
+    background-color: #1976a8;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #15658f;
+    border-color: #15658f;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 戻る・解除など */
+.button-secondary {
+    border-color: #90a4ae;
+    background-color: #ffffff;
+    color: #546e7a;
+}
+
+.button-secondary:hover {
+    border-color: #78909c;
+    background-color: #eef3f5;
+    color: #37474f;
+}
+
+/* 無効化 */
+.button-danger {
+    border-color: #c94b4b;
+    background-color: #ffffff;
+    color: #b23b3b;
+}
+
+.button-danger:hover {
+    border-color: #b23b3b;
+    background-color: #b23b3b;
+    color: #ffffff;
+}
+
+/* 検索ボタン・解除ボタンなどの高さ位置を調整 */
+.search-row .button,
+.search-row button {
+    height: 38px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+/* =========================
+   患者詳細画面
+========================= */
+.patients-view table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.patients-view th,
+.patients-view td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5eaed;
+    font-size: 14px;
+    text-align: left;
+}
+
+.patients-view th {
+    width: 180px;
+    background-color: #eef3f5;
+    color: #455a64;
+    font-weight: bold;
+}
+
+.patients-view td {
+    color: #37474f;
+}
+
+.patients-view tr:last-child th,
+.patients-view tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================
+   患者登録・編集フォーム
+========================= */
+.patient-form {
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+}
+
+.patient-form form {
+    margin-bottom: 0;
+}
+
+/* 各入力項目 */
+.patient-form .input {
+    margin-bottom: 18px;
+}
+
+.patient-form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #455a64;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.patient-form input,
+.patient-form select,
+.patient-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #cfd8dc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #37474f;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.patient-form input,
+.patient-form select {
+    height: 40px;
+}
+
+.patient-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* 入力時 */
+.patient-form input:focus,
+.patient-form select:focus,
+.patient-form textarea:focus {
+    outline: none;
+    border-color: #1976a8;
+    box-shadow: 0 0 0 2px rgba(25, 118, 168, 0.12);
+}
+
+/* =========================
+   フォーム下部の操作ボタン
+========================= */
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.form-actions .button,
+.form-actions button {
+    height: 40px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* =========================
+    患者フォーム 2列レイアウト
+========================= */
+.patient-form {
+    width: 100%;
+    max-width: none;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #dfe5e8;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* 基本は2列 */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+/* 各入力項目 */
+.form-group {
+    min-width: 0;
+}
+
+/* 住所・備考は2列分私用 */
+.form-group-wide {
+    grid-column: 1 / -1;
+}
+
+/* Grid側で間隔を管理するため既存marginを解除 */
+.form-grid .input {
+    margin-bottom: 0;
+}
+
+/* 画面幅が狭い場合は1列 */
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-wide {
+        grid-column: auto;
+    }
+
+    .patient-form {
+        max-width: 100%;
+    }
+}
